@@ -1,0 +1,39 @@
+.header-wrapper {
+  width: 100%;
+  text-align: center;
+}
+.logo {
+  width: 150px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px;
+  height: 40px;
+  box-shadow: 5px;
+}
+.nav-wrapper {
+  width: 100%;
+}
+.coverage {
+  height: 300px;
+  background-color: rgb(243, 249, 252);
+}
+.classicon {
+  float: left;
+  padding: 15px;
+  margin: 10px;
+}
+.backbutton {
+  border: none;
+  background: none;
+
+  font-size: 14px;
+  cursor: pointer;
+}
+.langbutton {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
