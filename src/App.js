@@ -1,18 +1,19 @@
 import React, { Component } from "react";
-import "./App.css";
-import ContactInfo from "./component/ContactInfo";
-import FirstPage from "./component/FirstPage";
-import CoveragePage from "./component/CoveragePage";
+// import "./App.css";
+import ParentPage from "./component/ParentPage";
+import Navigate from "./component/Navigate";
+import Sample from "./component/Sample";
 
 class App extends Component {
   render() {
     return (
       <div>
-        {/* <CoveragePage /> */}
-        <FirstPage />
-        {/* <ContactInfo /> */}
+        {/* <Sample /> */}
+        <ParentPage />
+        {/* <Navigate /> */}
       </div>
     );
   }
 }
+
 export default App;

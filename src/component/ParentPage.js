@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-
+import "../App.css";
+import Sample from "./Sample";
 const initialState = {
-  yearofbirth: "",
+  yearofbirth: "1986",
   children: "",
   earnings: "",
   liabilities: "",
@@ -12,6 +13,7 @@ const initialState = {
   liabilitiesError: "",
   smokingError: "",
 };
+
 class ParentPage extends Component {
   state = initialState;
 
@@ -76,16 +78,20 @@ class ParentPage extends Component {
     const isValid = this.validate();
     if (isValid) {
       console.log(this.state);
+      alert(`${this.state.yearofbirth}`);
       this.setState(initialState);
+      this.props.history.push("/Sample");
     }
   };
 
   render() {
     let { smokingOption } = this.state;
+
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="yearofbirth"></label> Year of Birth
+          <h4>Enter the Details</h4>
+          <label htmlFor="yearofbirth"></label> Year of birth
           <input
             className="list"
             type="text"
@@ -93,19 +99,10 @@ class ParentPage extends Component {
             pattern="[0-9]{0,4}"
             value={this.state.yearofbirth}
             onChange={this.handleChange}
+            ref={(input) => (this.yearofbirth = input)}
           />
           <div className="firstError">{this.state.yearofbirthError}</div>
-          <label htmlFor="children">Children</label>
-          <input
-            className="list"
-            type="text"
-            name="children"
-            pattern="[0-9]{0,2}"
-            value={this.state.children}
-            onChange={this.handleChange}
-          />
-          <div className="firstError">{this.state.childrenError}</div>
-          <label htmlFor="earnings"> Earnings</label>
+          <label htmlFor="earnings"> Monthly income before taxes</label>
           <input
             className="list"
             type="text"
@@ -115,7 +112,9 @@ class ParentPage extends Component {
             onChange={this.handleChange}
           />
           <div className="firstError">{this.state.earningsError}</div>
-          <label htmlFor="liabilities">Liabilities</label>
+          <label htmlFor="liabilities">
+            Total liabilities, loans and credits
+          </label>
           <input
             className="list"
             type="text"
@@ -125,6 +124,17 @@ class ParentPage extends Component {
             onChange={this.handleChange}
           />
           <div className="firstError">{this.state.liabilitiesError}</div>
+          <label htmlFor="children">Number of children in care</label>
+          <input
+            className="list"
+            type="text"
+            name="children"
+            pattern="[0-9]{0,2}"
+            value={this.state.children}
+            onChange={this.handleChange}
+          />
+          <div className="firstError">{this.state.childrenError}</div>
+          <div>Smoking Habit?{this.state.smokingOption}</div>
           <label htmlFor="smoking">
             <input
               type="radio"
@@ -148,9 +158,15 @@ class ParentPage extends Component {
             No
           </label>
           <div className="firstError">{this.state.smokingError}</div>
-          <div>Smoking : {this.state.smokingOption}</div>
           <button type="submit">Submit</button>
         </form>
+        <div>
+          <h5>
+            data entered yearofbirth:{this.state.yearofbirth}
+            Children:{this.state.children}
+          </h5>
+        </div>
+        <Sample data={this.state.yearofbirth} {...this.state} />
       </div>
     );
   }

@@ -1,0 +1,48 @@
+.navbar {
+  position: relative;
+  /* height: 60px; */
+}
+.brand {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  margin-left: -50px;
+}
+.container-row {
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+}
+.container-wrapper {
+  height: 300px;
+  background-color: rgb(226, 240, 247);
+}
+.container-header {
+  text-align: left;
+  display: inline;
+}
+.default-card {
+  padding: 20px;
+  margin: 0 0 10px 120px;
+  height: 350px;
+  background-color: white;
+}
+.card-header {
+  background-color: white;
+}
+.col-card {
+  padding: 15px 0 10px 50px;
+}
+.col-cardresp {
+  padding: 15px 0 10px 70px;
+}
+.col-header {
+  padding: 3px 0 5px 10px;
+}
+.col-edit-icon {
+  padding: 3px 0 10px 200px;
+  cursor: pointer;
+}
+i {
+  margin-right: 10px;
+}

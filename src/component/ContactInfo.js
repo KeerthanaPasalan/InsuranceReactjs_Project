@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../App.css";
 import { useFormik } from "formik";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail, MdLocationOn } from "react-icons/md";
